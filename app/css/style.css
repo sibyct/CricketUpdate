@@ -1,0 +1,43 @@
+/**
+*  @author ctola
+*/
+header, main, footer {
+  padding-left: 240px; }
+
+@media only screen and (max-width: 992px) {
+  header, main, footer {
+    padding-left: 0; } }
+
+.onine-status{
+  width: 10px;
+  height:10px;
+}
+.avatar{
+  width: 64px;
+  height:64px;
+  padding: 5px;
+}
+@-webkit-keyframes blink {
+    0% {
+        opacity:1;
+    }
+    50% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+
+.blink-image {
+    -webkit-animation: blink normal 2s infinite ease-in-out; /* Webkit */
+}
+
+.bold{
+  font-weight:bold;
+}
+
+.scores{
+  text-decoration: none  !important;
+  color: black;
+}

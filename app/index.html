@@ -1,0 +1,72 @@
+<!--
+  @author ctola
+-->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>angular materializecss</title>
+    <!-- Fonts Icon material-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="bower_components/material-design-icons/iconfont/material-icons.css"> -->
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="lib/css/materialize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+</head>
+<body ng-app="app" ng-controller="AppController">
+<header>
+    <nav class="teal">
+        <a href="#" class="brand-logo center flow-text">CricDate</a>         
+      <ul id="nav-mobile" class="side-nav fixed">
+          <li><div class="userView">
+      <div class="background">
+        <img src="img/cover.jpg">
+      </div>
+      <a href="#!user"><img class="circle" src="img/avatar.png"></a>
+      <a href="#!name"><span class="name">{{user.username}}</span></a>
+      <a href="#!email"><span class="email">{{user.email}}</span></a>
+    </div></li>
+        <li><a href="#!"><i class="material-icons">dashboard</i>DashBoard</a></li>
+        <li><a ui-sref="match"><i class="material-icons">play_arrow</i>Match</a></li>
+        <li><a ui-sref="player"><i class="material-icons">assignment_ind</i>Players</a></li>
+        <li ng-click="logout()"><a><i class="material-icons">power_settings_new</i>Logout</a></li>
+      </ul>
+      <a href="#" class="button-collapse" data-activates="nav-mobile" data-sidenav="left" data-menuwidth="240" data-closeonclick="false">
+        <i class="material-icons">menu</i>
+      </a>
+    </nav>
+</header>
+<main>
+    <div ui-view></div>
+</main>
+<footer>
+    <div class="row"></div>
+</footer>
+    <!-- Javascript -->
+    <script src="lib/js/jquery.js"></script>
+    <script src="lib/js/angular.js"></script>
+    <script src="lib/js/angular-ui-router.js"></script>
+    <script src="lib/js/angular-resource.js"></script>
+    <script src="lib/js/materialize.js"></script>
+    <script src="lib/js/angular-materialize.js"></script>
+    <script src="lib/js/underscore-min.js"></script>
+    <script src="lib/js/moment/moment.js"></script>
+    <script src="js/app.module.js"></script>
+    <script src="js/config/app.config.js"></script>
+    <script src="js/services/app.service.js"></script>
+    <script src="js/factories/dashboard.services.factory.js"></script>
+    <script src="js/factories/match.services.factory.js"></script>
+    <script src="js/factories/player.services.factory.js"></script>
+    <script src="js/filters/to.filter.js"></script>
+    <script src="js/controllers/app.controller.js"></script>
+    <script src="js/controllers/home.controller.js"></script>
+    <script src="js/controllers/player.controller.js"></script>
+    <script src="js/controllers/match.controller.js"></script>
+    <!-- Javascript UI-->
+    <script>
+        $(".button-collapse").sideNav();
+    </script>
+</body>
+</html>

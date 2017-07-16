@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col s12">
+     <div class="row">
+        <div class="col s12 m9">
+          <div class="card">
+            <div class="card-content">
+              <span class="card-title">Score card {{match.data.team[0].name}} vs {{match.data.team[1].name}}</span>
+              <div class="divider"></div>
+
+              <div ng-repeat="innings in match.data.batting">
+                <p class="blue-text">{{innings.title}}</p>
+                <ul>
+                  <li ng-repeat="score in innings.scores">
+                    <a ui-sref="player({id:{{score.pid}}})" class="scores">
+                    {{score.batsman}} <span class="right"> {{score.R}} {{score.B ? '('+score.B+')': ''}}</span>
+                    </a>
+                    <div class="divider"></div>
+                    </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m3">
+          <div class="card">
+            <div class="card-content">
+              <span class="card-title">Hot Matches</span>
+              <div ng-repeat ="hot in hotMatches"> 
+              <div class="card  blue-grey darken-1">
+                <a ui-sref="match({id:{{hot.unique_id}}})">
+                <div class="card-content white-text">
+                  {{hot.team1}} vs {{hot.team2}}                  
+                </div>
+                </a>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>

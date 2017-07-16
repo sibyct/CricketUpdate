@@ -1,0 +1,66 @@
+<!-- @author ctola-->
+<!--waves-effect waves-light -->
+<div class="row">
+    <div class="col s12 m6 input">
+      <div class="card">
+            <div class="card-content">
+              <span class="card-title"><i class="material-icons">play_circle_filled</i> Matches</span>
+              <div class="divider"></div>
+                <ul id="live-matches" ng-repeat='innings in todaysMatch| limitTo: quantity'>
+                  <li><a ui-sref="match({id:{{innings.unique_id}}})">
+                  <span class="blue-text text-darken-2 bold">{{innings.team1}}</span>  vs  <span class="blue-text text-darken-2 bold">{{innings.team2}}</span> <span class="new badge" data-badge-caption=""  ng-show="{{innings.matchStarted}}">Live</span></a>
+                  <div class="divider"></div>
+                  </li>
+                </ul>
+            </div>
+            <div class="card-action">
+              <a href="#" ng-click="quantity = quantity == 4 ? todaysMatch.length : 4">{{quantity == 4 ? 'Load More' : 'Load Less'}}</a>
+            </div>
+          </div>
+    </div>
+    <div class="col s12 m6 input">
+      <div class="card">
+            <div class="card-content">
+              <span class="card-title"><i class="material-icons">system_update_alt</i> Old Fixtures Results</span>
+              <div class="divider"></div>
+              <ul id="live-matches" ng-repeat='innings in oldMatches.data| limitTo: oldMatchQuantity'>
+                  <li>
+                  <span class="blue-text text-darken-2">{{innings.title}}</span>
+                  <div class="divider"></div>
+                  </li>
+                </ul>
+            </div>
+            <div class="card-action">
+              <a href="#" ng-click="oldMatchQuantity = oldMatchQuantity == 4 ? todaysMatch.length : 4">{{oldMatchQuantity == 4 ? 'Load More' : 'Load Less'}}</a>
+            </div>
+          </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col s12 m6 input">
+      <div class="card">
+            <div class="card-content">
+              <span class="card-title"><i class="material-icons">grade</i> Top Player Profile</span>
+              <div class="divider"></div>
+              <img class="circle avatar" ng-src="{{starPlayer.imageURL}}"><p>
+              <span class="blue-text name bold">{{starPlayer.name}}</span>
+                   </p>
+              <p>{{starPlayer.profile}}</p>
+            </div>
+          </div>
+    </div>
+    <div class="col s12 m6 input">
+      <div class="card">
+            <div class="card-content">
+              <span class="card-title"><i class="material-icons">system_update_alt</i> League Progress</span>
+              <div class="divider"></div>
+              <div class="section" ng-repeat="status in leagues">
+                  <p>{{status.name}}</p>
+                  <div class="progress  blue lighten-4">
+                    <div class="determinate blue" ng-style=status.completion></div>
+                  </div>
+                </div>
+            </div>
+          </div>
+    </div>
+</div>

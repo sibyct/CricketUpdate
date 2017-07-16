@@ -1,0 +1,58 @@
+<!--
+  @author ctola
+-->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>angular materializecss</title>
+    <!-- Fonts Icon material-->
+   <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   <!--  <link rel="stylesheet" href="bower_components/material-design-icons/iconfont/material-icons.css"> -->
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="lib/css/materialize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body ng-app="app">
+    <div class="row" ng-controller="LoginController">
+    <div class="col s12">
+<nav>
+    <div class="nav-wrapper teal">
+      <a href="#" class="brand-logo center">Login</a>
+      
+    </div>
+  </nav>
+    </div>
+    <p class="teal-text center">Enter any valid non-blank values</p>
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12 m6 offset-m3">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="icon_prefix" type="text" class="validate" ng-model="user.username">
+          <label for="icon_prefix">User Name</label>
+        </div>
+        <div class="input-field col s12 m6 offset-m3">
+          <i class="material-icons prefix">email</i>
+          <input id="icon_prefix" type="email" class="validate" ng-model="user.email">
+          <label for="icon_prefix">Email</label>
+        </div>
+        <div class="input-field col s12 m6 offset-m3">
+          <i class="material-icons prefix">verified_user</i>
+          <input id="icon_telephone" type="password" class="validate" ng-model="user.password">
+          <label for="icon_telephone">Password</label>
+        </div>
+        <div class="input-field col s12 m6 offset-m3 center">
+            <a class="btn btn-floating btn-large pulse" ng-click="login()" ng-disabled="!(user.username && user.email && user.password)"><i class="material-icons">lock_open</i></a>
+        </div>
+      </div>
+    </form>
+  </div>
+    <!-- Javascript -->
+    <script src="lib/js/jquery.js"></script>
+    <script src="lib/js/angular.js"></script>
+    <script src="lib/js/materialize.js"></script>
+    <script src="lib/js/angular-materialize.js"></script>
+    <script src="js/controllers/login.controller.js"></script>
+</body>
+</html>

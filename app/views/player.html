@@ -1,0 +1,48 @@
+<div class="row">
+  <div class="col s8 offset-s2">
+    <div class="card">
+            <div class="card-content">
+              <span class="card-title"> <img ng-src="{{playerStats.imageURL}}" class="circle avatar"/>{{playerStats.name}}</span>
+              <div class="divider"></div>
+              <div class="card  blue-grey darken-1">
+                <div class="card-content white-text">
+                  Country : {{playerStats.country}}                  
+                </div>
+                <div class="divider"></div>
+                <div class="card-content white-text">
+                  Position : {{playerStats.playingRole}}                  
+                </div>
+                
+              </div>
+              <div class="card  blue-grey darken-1">
+                <div class="card-content white-text">
+                  <span class="card-title">Batting</span>
+                  <ul>
+                    <li>T20 : <span class="right">{{playerStats.data.batting.twenty20.Runs}}</span></li>
+                    <li>List A : <span class="right">{{playerStats.data.batting.listA.Runs}}</span></li>
+                    <li>First Class : <span class="right">{{playerStats.data.batting.firstClass.Runs}}</span></li>
+                    <li>T20 International : <span class="right">{{playerStats.data.batting.T20Is.Runs}}</span></li>
+                    <li>ODI : <span class="right">{{playerStats.data.batting.ODIs.Runs}}</span></li>
+                    <li>Test : <span class="right">{{playerStats.data.batting.tests.Runs}}</span></li>
+                    </li>
+                  </ul>                
+                </div>                
+              </div>
+              <div class="card  blue-grey darken-1">
+                <div class="card-content white-text">
+                  <span class="card-title">Bowling</span>
+                  <ul>
+                    <li>T20 : <span class="right">{{playerStats.data.bowling.twenty20.Wkts}}</span></li>
+                    <li>List A : <span class="right">{{playerStats.data.bowling.listA.Wkts}}</span></li>
+                    <li>First Class : <span class="right">{{playerStats.data.bowling.firstClass.Wkts}}</span></li>
+                    <li>T20 International : <span class="right">{{playerStats.data.bowling.T20Is.Wkts}}</span></li>
+                    <li>ODI : <span class="right">{{playerStats.data.bowling.ODIs.Wkts}}</span></li>
+                    <li>Test : <span class="right">{{playerStats.data.bowling.tests.Wkts}}</span></li>
+                    </li>
+                  </ul>                
+                </div>                
+              </div>
+            </div>
+    </div>
+  </div>
+</div>
